@@ -133,8 +133,6 @@ app.get('/:station/details', async (req, res) => {
     const result = await collection.find({stationname: station, date: { $lt: endDate, $gt: startDate }}).toArray()
     client.close()
 
-    console.dir(result)
-
     res.status(200).json(result)
 
 })
